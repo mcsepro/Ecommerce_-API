@@ -28,13 +28,13 @@ router.get('/products/:id', async(req, res) => {
 })
 
 //create a product
-router.post('/product',Auth, async(req, res) => {
+router.post('/product', Auth, async(req, res) => {
     try {
-        const newItem = new product({
+        const newProduct = new product({
             ...req.body,
             owner: req.user._id
         })
-        await newItem.save()
+        await newProduct.save()
         res.status(201).send(newProduct)
     } catch (error) {
         console.log({error})
