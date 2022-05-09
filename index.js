@@ -1,15 +1,19 @@
+require('dotenv').config();
 const express = require('express')
-const productRouter =require('./src/api/routers/product')
-require('./src/config/db/Mongoose')
+const userRouter = require('./src/api/routes/userRoute')
+require("./src/config/database/db"); //import the database
 
-const port = process.env.PORT
+
+const port = process.env.PORT || 3000;
+
 const app = express()
 
 app.use(express.json())
-app.use(productRouter)
-
+app.use(userRouter)
 
 
 app.listen(port, () => {
-    console.log('server listening on port ' + port)
+  console.log('server listening on port ' + port)
+
 });
+
