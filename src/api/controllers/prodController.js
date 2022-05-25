@@ -1,4 +1,4 @@
-const Product = require("../models/prodModel");
+import Product from ("../models/prodModel.js");
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }

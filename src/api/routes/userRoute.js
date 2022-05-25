@@ -1,6 +1,5 @@
 const router = require("express").Router();
-const userController = require("../controllers/userController");
-const { verifyUser } = require("../middleware/verifyToken");
+import userController from ("../controllers/userController");
 
 router.post("/", userController.signUp);
 
